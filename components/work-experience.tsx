@@ -67,7 +67,7 @@ function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
                                 width={24}
                                 height={24}
                                 decoding="async"
-                                className="rounded-xs shrink-0"
+                                className="rounded-full shrink-0"
                                 style={{ color: "transparent" }}
                                 src={job.logoSrc}
                             />
@@ -128,8 +128,8 @@ export const defaultJobs: Job[] = [
     },
     {
         company: "FIU: Applied Research Center",
-        href: "https://statefarm.com",
-        logoSrc: "https://media.licdn.com/dms/image/v2/C4E0BAQGJx9gWD93LvA/company-logo_200_200/company-logo_200_200/0/1630603177841/florida_international_university_applied_research_center_logo?e=1763596800&v=beta&t=_15gbJ0I9Pl3gYGo5xaDOJz5iEHY4LwAI4-_-WQxEfo",
+        href: "https://arc.fiu.edu/research/information-technology/applied-artificial-intelligence/",
+        logoSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Florida_Internation_University_seal.svg/250px-Florida_Internation_University_seal.svg.png",
         area: "Software Engineer Intern",
         year: "2023 - 2025",
     },

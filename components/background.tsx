@@ -7,14 +7,14 @@ export function Background() {
         <div style={{ inset: 0, position: 'absolute', opacity: 0.1 }}>
             {/* <PrismaticBurst
                 animationType="rotate"
-                intensity={0.5}
+                intensity={20}
                 speed={0.15}
                 distort={100}
                 paused={false}
                 offset={{ x: 0, y: 0 }}
                 hoverDampness={0.25}
-                rayCount={64}
-                mixBlendMode="lighten"
+                mixBlendMode='screen'
+                rayCount={90}
                 colors={['#696969', '#707070', '#ffffff']}
             /> */}
             <Dither

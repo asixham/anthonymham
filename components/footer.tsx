@@ -11,7 +11,7 @@ export function Footer() {
   const gridGap = 2       // Gap between lines
   
   
-  const fadeMask = "radial-gradient(ellipse 90% 90% at bottom, white 0%, white 35%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.3) 60%, transparent 85%)"
+  const fadeMask = "radial-gradient(ellipse 100% 120% at bottom, white 0%, white 35%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.3) 60%, transparent 85%)"
 
   useEffect(() => {
     if (typeof window === "undefined") return
@@ -30,8 +30,8 @@ export function Footer() {
       ctx.clearRect(0, 0, width, height)
 
       // Fixed font size - same on all screens
-      const fontSize = 70
-      const lineWidth = 3
+      const fontSize = 40
+      const lineWidth = 1
 
       // Draw text with outline for better visibility
       ctx.fillStyle = "white"
@@ -42,8 +42,8 @@ export function Footer() {
       // Add stroke for better definition
       ctx.strokeStyle = "white"
       ctx.lineWidth = lineWidth
-      ctx.strokeText("@asixham", width / 2, height / 2)
-      ctx.fillText("@asixham", width / 2, height / 2)
+      ctx.strokeText("mail@anthonymham.com", width / 2, height / 2)
+      ctx.fillText("mail@anthonymham.com", width / 2, height / 2)
 
       // Convert to data URL for mask
       const dataUrl = canvas.toDataURL()

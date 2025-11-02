@@ -27,7 +27,7 @@ interface HyperTextProps extends MotionProps {
 }
 
 const DEFAULT_CHARACTER_SET = Object.freeze(
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+  "aebcdefghijklmnopqrstuvwxyz".split("")
 ) as readonly string[]
 
 const getRandomInt = (max: number): number => Math.floor(Math.random() * max)
@@ -138,7 +138,7 @@ export function HyperText({
             key={index}
             className={cn("font-mono", letter === " " ? "w-3" : "")}
           >
-            {letter.toUpperCase()}
+            {letter}
           </motion.span>
         ))}
       </AnimatePresence>

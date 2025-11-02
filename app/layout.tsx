@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { redHatDisplay } from "./fonts";
+import { gabarito } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Anthony Ham",
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${redHatDisplay.className} antialiased`}
+      <body className={`${gabarito.className}  antialiased`}
       >
         {children}
       </body>

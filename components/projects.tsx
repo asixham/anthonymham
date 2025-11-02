@@ -108,7 +108,7 @@ function ProjectRow({ project, delaySec }: { project: Project; delaySec: number 
               {project.tech.map((t, idx) => (
                 <span
                   key={idx}
-                  className="rounded-md border border-gray-200 py-0.5 text-xs text-gray-600"
+                  className="text-xs text-gray-600"
                 >
                   {t}
                 </span>
@@ -133,6 +133,7 @@ export const defaultProjects: Project[] = [
     name: "FIU Rooms",
     href: "https://fiu-rooms.vercel.app",
     repoHref: "https://github.com/asixham/fiu-rooms",
+    logoSrc: "https://content.sportslogos.net/logos/31/678/full/fiu_panthers_logo_secondary_1987_sportslogosnet-4199.png",
     description:
       "Empty classroom finder for FIU's MMC Campus.",
     tech: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Python", "Selenium"],
@@ -141,7 +142,7 @@ export const defaultProjects: Project[] = [
     name: "Scout",
     href: "https://scout-silk.vercel.app",
     repoHref: "https://github.com/asixham/scout",
-    logoSrc: "https://cdn-icons-png.flaticon.com/512/919/919847.png",
+    logoSrc: "https://scout-silk.vercel.app/favicon.ico",
     description:
       "Scrapes and tracks internship repos (e.g., Summer2025-Internships) with alerts and filters like FAANG+.",
     tech: ["Next.js", "Cheerio", "KV (Vercel)", "Tailwind"],
@@ -150,7 +151,7 @@ export const defaultProjects: Project[] = [
     name: "Greenline",
     href: "greenline-ruddy.vercel.app/",
     repoHref: "https://github.com/asixham/greenline",
-    logoSrc: "https://cdn-icons-png.flaticon.com/512/825/825642.png",
+    logoSrc: "https://greenline-ruddy.vercel.app/_next/image?url=%2Fgreenline-logo-icon-transparent.png&w=48&q=75",
     description:
       "Stock explorer with Prophet-based forecasts. REST API backed; Polygon.io ingestion; React charts.",
     tech: ["React", "Python", "Prophet", "FastAPI", "Polygon.io"],
