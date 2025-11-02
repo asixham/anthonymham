@@ -55,43 +55,51 @@ export default function WorkSection({
 
 function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
     return (
-        <div className="work-animate hide" style={{ animationDelay: `${delaySec}s` }}>
-            <div className="flex flex-row items-center justify-between border-b border-dashed border-gray-600 py-2">
-                <a id="no-style" href={job.href} target="_blank" rel="noreferrer" className="min-w-0">
-                    <div className="flex flex-row items-center space-x-2">
-                        <div className="flex flex-row items-center space-x-3 min-w-0">
-                            {/* Logo */}
-                            <img
-                                alt={job.logoAlt || job.company}
-                                loading="lazy"
-                                width={24}
-                                height={24}
-                                decoding="async"
-                                className="rounded-sm shrink-0"
-                                style={{ color: "transparent" }}
-                                src={job.logoSrc}
-                            />
+<div className="flex items-center border-b border-dashed border-gray-600 py-2 overflow-hidden">
+  <a
+    id="no-style"
+    href={job.href}
+    target="_blank"
+    rel="noreferrer"
+    className="flex w-full items-center min-w-0 overflow-hidden"
+  >
+    {/* Logo */}
+    <img
+      alt={job.logoAlt || job.company}
+      width={24}
+      height={24}
+      loading="lazy"
+      decoding="async"
+      className="h-6 w-6 rounded-sm shrink-0"
+      style={{ color: "transparent" }}
+      src={job.logoSrc}
+    />
 
-                            {/* Company + optional suffix */}
-                            <div className="text-md flex flex-row items-center space-x-1.5 text-gray-700 min-w-0">
-                                <span className="truncate">{job.company}</span>
-                                {job.companySuffix ? (
-                                    <span className="text-sm text-gray-600 shrink-0">{job.companySuffix}</span>
-                                ) : null}
-                            </div>
-                        </div>
+    {/* Left text cluster: Company · Role (stays together) */}
+    <div className="flex items-center gap-1.5 w-0 flex-1 min-w-0 overflow-hidden ml-3">
+      {/* Company + optional suffix */}
+      <div className="flex items-center gap-1.5 min-w-0">
+        <span className="truncate">{job.company}</span>
+        {job.companySuffix ? (
+          <span className="text-sm text-gray-600 shrink-0">{job.companySuffix}</span>
+        ) : null}
+      </div>
 
-                        {/* Area / Role */}
-                        <div className="text-sm truncate text-gray-500">{job.area}</div>
-                    </div>
-                </a>
+      {/* subtle separator */}
+      <span className="text-gray-400 shrink-0">·</span>
 
-                {/* Year(s) */}
-                <div className="flex flex-row items-center space-x-2">
-                    <div className="text-sm text-gray-800">{job.year}</div>
-                </div>
-            </div>
-        </div>
+      {/* Role (title) — truncates, sits right after company */}
+      <span className="text-sm text-gray-500 w-0 flex-1 min-w-0 truncate [overflow-wrap:anywhere]">
+        {job.area}
+      </span>
+    </div>
+
+    {/* Year — pinned to far right */}
+    <div className="ml-auto shrink-0 pl-2 text-sm text-gray-800">{job.year}</div>
+  </a>
+</div>
+
+
     );
 }
 
@@ -152,10 +160,10 @@ export const internships: Job[] = [
         year: "2024"
     },
     {
-        company: "MDC: School of Engineering and Technology",
+        company: "MDC: School of Eng. and Technology",
         href: "",
         logoSrc: "https://aefschools.com/wp-content/uploads/2025/02/Seal-of-Miami-Dade-College.svg.png",
-        area: "Computer Science Tutor",
+        area: "CS Tutor",
         year: "2022-2023"
     }
 ];
