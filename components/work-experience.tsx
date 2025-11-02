@@ -67,7 +67,7 @@ function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
                                 width={24}
                                 height={24}
                                 decoding="async"
-                                className="rounded-full shrink-0"
+                                className="rounded-sm shrink-0"
                                 style={{ color: "transparent" }}
                                 src={job.logoSrc}
                             />
@@ -97,14 +97,25 @@ function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
 
 // --- Example data (optional): remove in production ---
 // You can import this where you render <WorkSection jobs={defaultJobs} /> to see it live.
-export const defaultJobs: Job[] = [
-    // {
-    //     company: "Bloomberg",
-    //     href: "https://bloomberg.com",
-    //     logoSrc: "https://media.licdn.com/dms/image/v2/C4D0BAQF0uyE7RGKDGg/company-logo_200_200/company-logo_200_200/0/1631374698859/bloomberg_lp_logo?e=1763596800&v=beta&t=ywumzUWXZlBZwsnRV_U-UiCDNbzjkRTBIph99XigJjE",
-    //     area: "Software Engineer",
-    //     year: "2026",
-    // },
+export const work: Job[] = [
+    {
+        company: "Google",
+        href: "https://google.com",
+        logoSrc: "https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_200_200/B4EZmhegXHGcAM-/0/1759350753990/google_logo?e=1763596800&v=beta&t=Fdsr4Iq3N7IudCCzZQgOQrwOHSPx3TXROdsKFFqNd-E",
+        area: "Software Engineer",
+        year: "2025",
+    },
+    {
+        company: "Bloomberg",
+        href: "https://bloomberg.com",
+        logoSrc: "https://media.licdn.com/dms/image/v2/C4D0BAQF0uyE7RGKDGg/company-logo_200_200/company-logo_200_200/0/1631374698859/bloomberg_lp_logo?e=1763596800&v=beta&t=ywumzUWXZlBZwsnRV_U-UiCDNbzjkRTBIph99XigJjE",
+        area: "Software Engineer",
+        year: "2026",
+    },
+]
+
+
+export const internships: Job[] = [
     {
         company: "Amazon",
         href: "https://amazon.com",
@@ -122,7 +133,7 @@ export const defaultJobs: Job[] = [
     {
         company: "State Farm",
         href: "https://statefarm.com",
-        logoSrc: "https://www.svgrepo.com/show/519453/state-farm.svg",
+        logoSrc: "https://freepnglogo.com/images/all_img/1713117769state-farm-icon.png",
         area: "Software Engineer Intern",
         year: "2024 - 2025",
     },
@@ -131,6 +142,20 @@ export const defaultJobs: Job[] = [
         href: "https://arc.fiu.edu/research/information-technology/applied-artificial-intelligence/",
         logoSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Florida_Internation_University_seal.svg/250px-Florida_Internation_University_seal.svg.png",
         area: "Software Engineer Intern",
-        year: "2023 - 2025",
+        year: "2024 - 2025",
     },
+    {
+        company: "National Science Foundation",
+        href: "",
+        logoSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/NSF_logo.png/1019px-NSF_logo.png",
+        area: "Undergraduate Research Intern",
+        year: "2024"
+    },
+    {
+        company: "MDC: School of Engineering and Technology",
+        href: "",
+        logoSrc: "https://aefschools.com/wp-content/uploads/2025/02/Seal-of-Miami-Dade-College.svg.png",
+        area: "Computer Science Tutor",
+        year: "2022-2023"
+    }
 ];

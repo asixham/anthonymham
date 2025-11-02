@@ -64,7 +64,7 @@ function ProjectRow({ project, delaySec }: { project: Project; delaySec: number 
                 width={24}
                 height={24}
                 decoding="async"
-                className="rounded-xs shrink-0"
+                className="rounded-sm shrink-0"
                 style={{ color: "transparent" }}
                 src={project.logoSrc}
               />
@@ -149,7 +149,7 @@ export const defaultProjects: Project[] = [
   },
   {
     name: "Greenline",
-    href: "greenline-ruddy.vercel.app/",
+    href: "https://greenline-ruddy.vercel.app/",
     repoHref: "https://github.com/asixham/greenline",
     logoSrc: "https://greenline-ruddy.vercel.app/_next/image?url=%2Fgreenline-logo-icon-transparent.png&w=48&q=75",
     description:

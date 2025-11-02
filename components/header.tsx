@@ -11,7 +11,7 @@ export default function Header() {
             {/* Left Section: Name */}
             <div className="flex flex-row items-center space-x-4">
                 <Link href="/">
-                    <HyperText className={`${gabarito.className} text-3xl font-bold cursor-pointer`} animateOnHover={false} delay={400}>Anthony Ham</HyperText>
+                    <HyperText className={`${gabarito.className} text-3xl font-bold cursor-pointer`} animateOnHover={true} delay={400}>Anthony Ham</HyperText>
                     {/* <span className={`${outfit.className} name text-3xl font-bold cursor-pointer`}>Anthony Ham</span> */}
                 </Link>
             </div>

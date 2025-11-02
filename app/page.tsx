@@ -1,5 +1,5 @@
 import { Footer } from "@/components/footer";
-import WorkSection, { defaultJobs } from "@/components/work-experience";
+import WorkSection, { internships, work } from "@/components/work-experience";
 import Header from "@/components/header";
 import AcademicSection, { defaultAcademics } from "@/components/academic-experience";
 import ProjectsSection, { defaultProjects } from "@/components/projects";
@@ -37,10 +37,15 @@ export default function Home() {
             </BlurFade>
           ))}
         </div>
+        
+        {/* Full Time */}
+        {/* <BlurFade className="w-full px-3" delay={sectionBaseDelay + 2 * sectionStep + intro.length * introStep}>
+          <WorkSection title="Work" jobs={work} />
+        </BlurFade> */}
 
         {/* Internships */}
         <BlurFade className="w-full px-3" delay={sectionBaseDelay + 2 * sectionStep + intro.length * introStep}>
-          <WorkSection title="Internships" jobs={defaultJobs} />
+          <WorkSection title="Undergraduate Internships" jobs={internships} />
         </BlurFade>
 
         {/* Projects */}
@@ -50,7 +55,7 @@ export default function Home() {
 
         {/* Academics */}
         <BlurFade className="w-full px-3" delay={sectionBaseDelay + 4 * sectionStep + intro.length * introStep}>
-          <AcademicSection academics={defaultAcademics} />
+          <AcademicSection title="Education" academics={defaultAcademics} />
         </BlurFade>
         </div>
 

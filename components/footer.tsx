@@ -8,7 +8,7 @@ export function Footer() {
   
   // Fixed grid size - same on all screens
   const squareSize = 1.25  // Line width (thin vertical lines)
-  const gridGap = 2       // Gap between lines
+  const gridGap = 1.5       // Gap between lines
   
   
   const fadeMask = "radial-gradient(ellipse 100% 120% at bottom, white 0%, white 35%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.3) 60%, transparent 85%)"
@@ -30,7 +30,7 @@ export function Footer() {
       ctx.clearRect(0, 0, width, height)
 
       // Fixed font size - same on all screens
-      const fontSize = 40
+      const fontSize = 30
       const lineWidth = 1
 
       // Draw text with outline for better visibility
