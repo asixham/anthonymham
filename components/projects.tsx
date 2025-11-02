@@ -8,7 +8,7 @@ export type Project = {
   logoAlt?: string;
   description: string;        // one-liner
   tech?: string[];            // tag pills
-  year: string;               // e.g., "2024 – Present"
+  year?: string;               // e.g., "2024 – Present"
   stat?: string;              // e.g., "2k users", "★ 1.2k", etc. (optional)
 };
 
@@ -136,17 +136,15 @@ export const defaultProjects: Project[] = [
     description:
       "Empty classroom finder for FIU's MMC Campus.",
     tech: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Python", "Selenium"],
-    year: "2024 – Present",
   },
   {
     name: "Scout",
-    href: "https://scout-silk.vercel",
+    href: "https://scout-silk.vercel.app",
     repoHref: "https://github.com/asixham/scout",
     logoSrc: "https://cdn-icons-png.flaticon.com/512/919/919847.png",
     description:
       "Scrapes and tracks internship repos (e.g., Summer2025-Internships) with alerts and filters like FAANG+.",
     tech: ["Next.js", "Cheerio", "KV (Vercel)", "Tailwind"],
-    year: "2024 – Present",
   },
   {
     name: "Greenline",
@@ -156,7 +154,6 @@ export const defaultProjects: Project[] = [
     description:
       "Stock explorer with Prophet-based forecasts. REST API backed; Polygon.io ingestion; React charts.",
     tech: ["React", "Python", "Prophet", "FastAPI", "Polygon.io"],
-    year: "2024",
   },
   {
     name: "Summon",
@@ -164,6 +161,5 @@ export const defaultProjects: Project[] = [
     description:
       "Mac-native chat for local LLMs via Ollama. Fast prompt history, attachments, and session export.",
     tech: ["Swift", "AppKit", "Ollama"],
-    year: "2023 – 2024",
   },
 ];
