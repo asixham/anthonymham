@@ -72,7 +72,7 @@ function ProjectRow({ project, delaySec }: { project: Project; delaySec: number 
     <div className="work-animate hide h-full" style={{ animationDelay: `${delaySec}s` }}>
       <div
         className={`flex h-full flex-col justify-between border rounded-xl gap-2 p-3 transition ${
-          isClickable ? "cursor-pointer hover:bg-gray-100" : ""
+          isClickable ? "cursor-pointer hover:bg-foreground/5" : ""
         }`}
         onClick={handleRowClick}
         onKeyDown={handleRowKeyDown}
@@ -98,7 +98,7 @@ function ProjectRow({ project, delaySec }: { project: Project; delaySec: number 
 
             <div className="flex items-center gap-2 min-w-0">
               <span
-                className={`text-md text-gray-700 truncate ${
+                className={`text-md text-foreground truncate ${
                   isClickable ? "underline decoration-transparent hover:decoration-inherit" : ""
                 }`}
                 title={project.name}
@@ -111,7 +111,7 @@ function ProjectRow({ project, delaySec }: { project: Project; delaySec: number 
                   href={project.repoHref}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="text-sm text-gray-500 hover:text-gray-700 shrink-0"
+                  className="text-sm text-muted-foreground hover:text-foreground shrink-0"
                   aria-label={`${project.name} repository`}
                   title="Repository"
                   onClick={(e) => e.stopPropagation()}
@@ -125,7 +125,7 @@ function ProjectRow({ project, delaySec }: { project: Project; delaySec: number 
             </div>
           </div>
 
-          <p className="mt-1 text-sm text-gray-500 line-clamp-2">{project.description}</p>
+          <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{project.description}</p>
         </div>
 
         {/* Bottom section (tags + year/stat) */}
@@ -133,7 +133,7 @@ function ProjectRow({ project, delaySec }: { project: Project; delaySec: number 
           {project.tech && project.tech.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mb-1">
               {project.tech.map((t, idx) => (
-                <span key={idx} className="text-xs text-blue-500 border-blue-400 border-[1px] rounded-xl px-2 py-0.5">
+                <span key={idx} className="text-xs text-foreground/80 border border-border rounded-xl px-2 py-0.5">
                   {t}
                 </span>
               ))}
@@ -141,8 +141,8 @@ function ProjectRow({ project, delaySec }: { project: Project; delaySec: number 
           )}
 
           <div className="flex justify-end items-center gap-2">
-            {project.stat && <span className="text-xs text-gray-900">{project.stat}</span>}
-            {project.year && <span className="text-sm text-gray-900">{project.year}</span>}
+            {project.stat && <span className="text-xs text-foreground">{project.stat}</span>}
+            {project.year && <span className="text-sm text-foreground">{project.year}</span>}
           </div>
         </div>
       </div>

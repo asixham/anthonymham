@@ -35,7 +35,7 @@ export default function AcademicSection({
         >
             <h3 className="mb-3 block text-lg">{title}</h3>
 
-            <div className="border-t border-dashed border-gray-600">
+            <div className="border-t border-dashed border-border">
                 {academics.map((academic, i) => (
                     <AcademicRow
                         key={`${academic.institution}-${academic.year}-${i}`}
@@ -51,7 +51,7 @@ export default function AcademicSection({
 function AcademicRow({ academic, delaySec }: { academic: Academic; delaySec: number }) {
     return (
         <div className="work-animate hide" style={{ animationDelay: `${delaySec}s` }}>
-            <div className="flex flex-row items-center justify-between border-b border-dashed border-gray-600 py-2">
+            <div className="flex flex-row items-center justify-between border-b border-dashed border-border py-2">
                 <a id="no-style" href={academic.href} target="_blank" rel="noreferrer" className="min-w-0">
                     <div className="flex flex-row items-center space-x-3 min-w-0">
                         {academic.logoSrc && (
@@ -67,15 +67,15 @@ function AcademicRow({ academic, delaySec }: { academic: Academic; delaySec: num
                             />
                         )}
                         <div className="flex flex-col min-w-0">
-                            <span className="text-md truncate text-gray-700">{academic.institution}</span>
-                            <span className="text-sm text-gray-500 truncate">{academic.degree}</span>
+                            <span className="text-md truncate text-foreground">{academic.institution}</span>
+                            <span className="text-sm text-muted-foreground truncate">{academic.degree}</span>
                             {academic.details && (
-                                <span className="text-sm text-gray-600 truncate">{academic.details}</span>
+                                <span className="text-sm text-muted-foreground truncate">{academic.details}</span>
                             )}
                         </div>
                     </div>
                 </a>
-                <div className="text-sm text-gray-900">{academic.year}</div>
+                <div className="text-sm text-foreground">{academic.year}</div>
             </div>
         </div>
     );

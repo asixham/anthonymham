@@ -34,7 +34,7 @@ export default function Home() {
             </BlurFade>
 
             {/* Intro copy (each paragraph staggered) */}
-            <div className="px-3 space-y-3 text-gray-700 text-lg w-full">
+            <div className="px-3 space-y-3 text-muted-foreground text-lg w-full">
               {intro.map((line, i) => (
                 <BlurFade key={i} delay={sectionBaseDelay + sectionStep + i * introStep}>
                   <p>{line}</p>

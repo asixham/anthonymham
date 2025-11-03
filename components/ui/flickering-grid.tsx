@@ -9,6 +9,8 @@ interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
   gridGap?: number
   flickerChance?: number
   color?: string
+  colorLight?: string
+  colorDark?: string
   width?: number
   height?: number
   className?: string
@@ -19,7 +21,9 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   squareSize = 4,
   gridGap = 6,
   flickerChance = 0.3,
-  color = "rgb(0, 0, 0)",
+  color,
+  colorLight = "rgb(0, 0, 0)",
+  colorDark = "rgb(255, 255, 255)",
   width,
   height,
   className,
@@ -30,6 +34,36 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   const containerRef = useRef<HTMLDivElement>(null)
   const [isInView, setIsInView] = useState(false)
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 })
+  const [isDark, setIsDark] = useState<boolean>(false)
+
+  // Detect current theme and react to changes
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const getIsDark = () => {
+      try {
+        const t = localStorage.getItem("theme")
+        if (t === "dark") return true
+        if (t === "light") return false
+      } catch {}
+      return (
+        document.documentElement.classList.contains("dark") ||
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      )
+    }
+    setIsDark(getIsDark())
+
+    const mo = new MutationObserver(() => setIsDark(getIsDark()))
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] })
+
+    const mql = window.matchMedia("(prefers-color-scheme: dark)")
+    const onChange = () => setIsDark(getIsDark())
+    mql.addEventListener?.("change", onChange)
+
+    return () => {
+      mo.disconnect()
+      mql.removeEventListener?.("change", onChange)
+    }
+  }, [])
 
   const memoizedColor = useMemo(() => {
     const toRGBA = (color: string) => {
@@ -45,8 +79,9 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
       const [r, g, b] = Array.from(ctx.getImageData(0, 0, 1, 1).data)
       return `rgba(${r}, ${g}, ${b},`
     }
-    return toRGBA(color)
-  }, [color])
+    const chosen = color ?? (isDark ? colorDark : colorLight)
+    return toRGBA(chosen)
+  }, [color, colorDark, colorLight, isDark])
 
   const setupCanvas = useCallback(
     (canvas: HTMLCanvasElement, width: number, height: number) => {

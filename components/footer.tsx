@@ -63,7 +63,8 @@ export function Footer() {
           className="absolute inset-0 z-5"
           squareSize={squareSize}
           gridGap={gridGap}
-          color="rgb(0, 0, 0)"
+          colorLight="rgb(0, 0, 0)"
+          colorDark="rgb(255, 255, 255)"
           maxOpacity={0.25}
           flickerChance={0.1}
           height={150}
@@ -79,7 +80,8 @@ export function Footer() {
           gridGap={gridGap}
           maxOpacity={0.75}
           flickerChance={0.35}
-          color="rgb(0, 0, 0)"
+          colorLight="rgb(0, 0, 0)"
+          colorDark="rgb(255, 255, 255)"
           height={150}
           style={{
             maskImage: textMask,
@@ -93,7 +95,7 @@ export function Footer() {
           }}
         />
       </div>
-      <div className="text-center text-gray-500 text-xs">
+      <div className="text-center text-muted-foreground text-xs">
         © Made in Seattle, WA
       </div>
     </div>

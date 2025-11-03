@@ -79,20 +79,20 @@ function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
     <div className="flex items-center gap-1.5 w-0 flex-1 min-w-0 overflow-hidden ml-3">
       {/* Company + optional suffix */}
       <div className="flex items-center gap-1.5 min-w-0">
-        <span className="truncate text-gray-700 text-md">{job.company}</span>
+        <span className="truncate text-foreground text-md">{job.company}</span>
         {job.companySuffix ? (
-          <span className="text-md text-gray-400 shrink-0">{job.companySuffix}</span>
+          <span className="text-md text-muted-foreground shrink-0">{job.companySuffix}</span>
         ) : null}
       </div>
 
       {/* Role (title) — truncates, sits right after company */}
-      <span className="text-sm text-gray-400 w-0 flex-1 min-w-0 truncate [overflow-wrap:anywhere]">
+      <span className="text-sm text-muted-foreground w-0 flex-1 min-w-0 truncate [overflow-wrap:anywhere]">
         {job.area}
       </span>
     </div>
 
     {/* Year — pinned to far right */}
-    <div className="ml-auto shrink-0 pl-2 text-sm text-gray-400">{job.year}</div>
+    <div className="ml-auto shrink-0 pl-2 text-sm text-muted-foreground">{job.year}</div>
   </a>
 </div>
 

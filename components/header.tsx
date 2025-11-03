@@ -4,6 +4,8 @@ import Link from "next/link";
 import { zalandoSansExpanded } from "@/app/fonts";
 import { HyperText } from "./ui/hyper-text";
 import { Background } from "./background";
+import { ThemeToggle } from "./ui/theme-toggle";
+import { Twitter, Linkedin, FileText } from "lucide-react";
 
 export default function Header() {
     return (
@@ -28,31 +30,32 @@ export default function Header() {
                         href="https://twitter.com/asixham"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="Twitter"
+                        className="outline-none focus:outline-none text-foreground/80 hover:text-foreground"
                     >
-                        <span className="cursor-pointer">
-                            <img src="https://calix.dev/icons/twitter.svg" alt="Twitter" className="w-4" />
-                        </span>
+                        <Twitter className="w-4 h-4" />
                     </a>
 
                     <a
                         href="https://linkedin.com/in/xnthiny"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="LinkedIn"
+                        className="outline-none focus:outline-none text-foreground/80 hover:text-foreground"
                     >
-                        <span className="cursor-pointer">
-                            <img src="https://calix.dev/icons/linkedin.svg" alt="LinkedIn" className="w-4" />
-                        </span>
+                        <Linkedin className="w-4 h-4" />
                     </a>
 
                     <a
                         href="https://anthonymham.com/resume.pdf"
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="Resume"
+                        className="outline-none focus:outline-none text-foreground/80 hover:text-foreground"
                     >
-                        <span className="cursor-pointer">
-                            <img src="https://www.svgrepo.com/show/532167/document-layout-right.svg" alt="LinkedIn" className="w-4" />
-                        </span>
+                        <FileText className="w-4 h-4" />
                     </a>
+                    <ThemeToggle />
                 </div>
             </div>
         </header>
