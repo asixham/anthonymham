@@ -1,17 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { gabarito } from "@/app/fonts";
+import { zalandoSansExpanded } from "@/app/fonts";
 import { HyperText } from "./ui/hyper-text";
-
+import { Background } from "./background";
 
 export default function Header() {
     return (
-        <header className="flex w-full z-10 flex-row items-center justify-between pt-10">
+        <header className="flex w-full z-10 flex-row items-center justify-between pt-15">
             {/* Left Section: Name */}
             <div className="flex flex-row items-center space-x-4">
                 <Link href="/">
-                    <HyperText className={`${gabarito.className} text-3xl font-bold cursor-pointer`} animateOnHover={true} delay={400}>Anthony Ham</HyperText>
+                    <HyperText className={`${zalandoSansExpanded.className} text-3xl font-bold cursor-pointer`} animateOnHover={true} duration={1000}>Anthony Ham</HyperText>
                     {/* <span className={`${outfit.className} name text-3xl font-bold cursor-pointer`}>Anthony Ham</span> */}
                 </Link>
             </div>

@@ -40,7 +40,7 @@ export default function WorkSection({
         >
             <h3 className="mb-3 block text-lg">{title}</h3>
 
-            <div className="border-t border-dashed border-gray-600">
+            <div className="">
                 {jobs.map((job, i) => (
                     <WorkRow
                         key={`${job.company}-${job.year}-${i}`}
@@ -55,7 +55,7 @@ export default function WorkSection({
 
 function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
     return (
-<div className="flex items-center border-b border-dashed border-gray-600 py-2 overflow-hidden">
+<div className="flex items-center py-2 overflow-hidden">
   <a
     id="no-style"
     href={job.href}
@@ -79,23 +79,20 @@ function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
     <div className="flex items-center gap-1.5 w-0 flex-1 min-w-0 overflow-hidden ml-3">
       {/* Company + optional suffix */}
       <div className="flex items-center gap-1.5 min-w-0">
-        <span className="truncate">{job.company}</span>
+        <span className="truncate text-gray-700 text-md">{job.company}</span>
         {job.companySuffix ? (
-          <span className="text-sm text-gray-600 shrink-0">{job.companySuffix}</span>
+          <span className="text-md text-gray-400 shrink-0">{job.companySuffix}</span>
         ) : null}
       </div>
 
-      {/* subtle separator */}
-      <span className="text-gray-400 shrink-0">·</span>
-
       {/* Role (title) — truncates, sits right after company */}
-      <span className="text-sm text-gray-500 w-0 flex-1 min-w-0 truncate [overflow-wrap:anywhere]">
+      <span className="text-sm text-gray-400 w-0 flex-1 min-w-0 truncate [overflow-wrap:anywhere]">
         {job.area}
       </span>
     </div>
 
     {/* Year — pinned to far right */}
-    <div className="ml-auto shrink-0 pl-2 text-sm text-gray-800">{job.year}</div>
+    <div className="ml-auto shrink-0 pl-2 text-sm text-gray-400">{job.year}</div>
   </a>
 </div>
 

@@ -9,9 +9,9 @@ import { Background } from "@/components/background";
 
 export default function Home() {
   // Tweak these to your taste
-  const sectionBaseDelay = 0.3;      // first element delay
-  const sectionStep = 0.15;           // stagger between siblings
-  const introStep = 0.08;             // tighter stagger for intro lines
+  const sectionBaseDelay = 0.1;      // first element delay
+  const sectionStep = 0.05;           // stagger between siblings
+  const introStep = 0.02;             // tighter stagger for intro lines
 
   const intro = [
     "I'm a senior at Florida International University, majoring in Computer Science. Currently, I am an SDE Intern at Amazon.",
@@ -21,54 +21,59 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative flex justify-center min-h-screen justify-between mih-h-dvh w-full font-sans md:px-3">
-      <div className="flex z-20 flex-col w-full max-w-2xl items-center justify-between space-y-10 md:border-x border-gray-600 border-dashed backdrop-blur-xs">
-        <div className="flex flex-col space-y-10">
-        {/* Header */}
-        <BlurFade className="w-full px-3" delay={sectionBaseDelay}>
-          <Header />
-        </BlurFade>
-
-        {/* Intro copy (each paragraph staggered) */}
-        <div className="text-md px-3 space-y-3 text-sm w-full">
-          {intro.map((line, i) => (
-            <BlurFade key={i} delay={sectionBaseDelay + sectionStep + i * introStep}>
-              <p>{line}</p>
+    <>
+      <div className="h-5 w-full absolute top-0">
+        <Background />
+      </div>
+      <div className="relative flex justify-center min-h-screen justify-between mih-h-dvh w-full font-sans md:px-3">
+        <div className="flex z-20 flex-col w-full max-w-2xl items-center justify-between space-y-10">
+          <div className="flex flex-col space-y-10">
+            {/* Header */}
+            <BlurFade className="w-full px-3" delay={sectionBaseDelay}>
+              <Header />
             </BlurFade>
-          ))}
-        </div>
-        
-        {/* Full Time */}
-        {/* <BlurFade className="w-full px-3" delay={sectionBaseDelay + 2 * sectionStep + intro.length * introStep}>
+
+            {/* Intro copy (each paragraph staggered) */}
+            <div className="px-3 space-y-3 text-gray-700 text-lg w-full">
+              {intro.map((line, i) => (
+                <BlurFade key={i} delay={sectionBaseDelay + sectionStep + i * introStep}>
+                  <p>{line}</p>
+                </BlurFade>
+              ))}
+            </div>
+
+            {/* Full Time */}
+            {/* <BlurFade className="w-full px-3" delay={sectionBaseDelay + 2 * sectionStep + intro.length * introStep}>
           <WorkSection title="Work" jobs={work} />
         </BlurFade> */}
 
-        {/* Internships */}
-        <BlurFade className="w-full px-3" delay={sectionBaseDelay + 2 * sectionStep + intro.length * introStep}>
-          <WorkSection title="Undergraduate Internships" jobs={internships} />
-        </BlurFade>
+            {/* Internships */}
+            <BlurFade className="w-full px-3" delay={sectionBaseDelay + 2 * sectionStep + intro.length * introStep}>
+              <WorkSection title="Undergraduate Internships" jobs={internships} />
+            </BlurFade>
 
-        {/* Projects */}
-        <BlurFade className="px-3 w-full" delay={sectionBaseDelay + 3 * sectionStep + intro.length * introStep}>
-          <ProjectsSection projects={defaultProjects} />
-        </BlurFade>
+            {/* Projects */}
+            <BlurFade className="px-3 w-full" delay={sectionBaseDelay + 3 * sectionStep + intro.length * introStep}>
+              <ProjectsSection projects={defaultProjects} />
+            </BlurFade>
 
-        {/* Academics */}
-        <BlurFade className="w-full px-3" delay={sectionBaseDelay + 4 * sectionStep + intro.length * introStep}>
+            {/* Academics */}
+            {/* <BlurFade className="w-full px-3" delay={sectionBaseDelay + 4 * sectionStep + intro.length * introStep}>
           <AcademicSection title="Education" academics={defaultAcademics} />
-        </BlurFade>
+        </BlurFade> */}
+          </div>
+
+          {/* Footer */}
+          <Link className="w-full" href="mailto:mail@anthonymham.com">
+            <BlurFade className="w-full" delay={sectionBaseDelay + 5 * sectionStep + intro.length * introStep}>
+              <Footer />
+            </BlurFade>
+          </Link>
         </div>
 
-        {/* Footer */}
-        <Link className="w-full" href="mailto:mail@anthonymham.com">
-        <BlurFade className="w-full" delay={sectionBaseDelay + 5 * sectionStep + intro.length * introStep}>
-          <Footer />
-        </BlurFade>
-        </Link>
+        {/* Optional background */}
+        {/* <Background /> */}
       </div>
-
-      {/* Optional background */}
-      <Background />
-    </div>
+    </>
   );
 }

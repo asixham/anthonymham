@@ -4,7 +4,7 @@ import Dither from './Dither';
 
 export function Background() {
     return (
-        <div style={{ inset: 0, position: 'absolute', opacity: 0.1 }}>
+        <div style={{ inset: 0, position: 'absolute', opacity: 0.2 }}>
             {/* <PrismaticBurst
                 animationType="rotate"
                 intensity={20}
@@ -18,14 +18,14 @@ export function Background() {
                 colors={['#696969', '#707070', '#ffffff']}
             /> */}
             <Dither
-                waveColor={[0.5, 0.5, 0.5]}
+                waveColor={[0.1, 0.34, 0.5]}
                 disableAnimation={false}
-                enableMouseInteraction={false}
+                enableMouseInteraction={true}
                 mouseRadius={0.1}
                 colorNum={5}
                 waveAmplitude={0.7}
                 waveFrequency={100}
-                waveSpeed={0.01}
+                waveSpeed={0.3}
             />
         </div>
     )
