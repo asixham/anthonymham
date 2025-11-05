@@ -55,7 +55,7 @@ export default function WorkSection({
 
 function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
     return (
-<div className="flex items-center py-2 overflow-hidden">
+<div className="flex items-center py-2.5 overflow-hidden first:border-t border-b border-dashed border-muted-foreground/35">
   <a
     id="no-style"
     href={job.href}
@@ -79,7 +79,7 @@ function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
     <div className="flex items-center gap-1.5 w-0 flex-1 min-w-0 overflow-hidden ml-3">
       {/* Company + optional suffix */}
       <div className="flex items-center gap-1.5 min-w-0">
-        <span className="truncate text-foreground text-md">{job.company}</span>
+        <span className="truncate text-gray-700 text-md">{job.company}</span>
         {job.companySuffix ? (
           <span className="text-md text-muted-foreground shrink-0">{job.companySuffix}</span>
         ) : null}
@@ -125,42 +125,42 @@ export const internships: Job[] = [
         company: "Amazon",
         href: "https://amazon.com",
         logoSrc: "https://www.svgrepo.com/show/112049/amazon-logo.svg",
-        area: "Software Engineer Intern",
+        area: "Engineering",
         year: "2025",
     },
     {
         company: "Google",
         href: "https://google.com",
         logoSrc: "https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_200_200/B4EZmhegXHGcAM-/0/1759350753990/google_logo?e=1763596800&v=beta&t=Fdsr4Iq3N7IudCCzZQgOQrwOHSPx3TXROdsKFFqNd-E",
-        area: "Software Engineer Intern",
+        area: "Engineering",
         year: "2025",
     },
-    {
-        company: "State Farm",
-        href: "https://statefarm.com",
-        logoSrc: "https://media.licdn.com/dms/image/v2/D4E0BAQGe3IHsGr7hjQ/company-logo_200_200/company-logo_200_200/0/1686247139310/state_farm_logo?e=1763596800&v=beta&t=iZmvmameiGC1hlFuuoXabWRzSgl82T8FNJwXIy-rI2k",
-        area: "Software Engineer Intern",
-        year: "2024",
-    },
+    // {
+    //     company: "State Farm",
+    //     href: "https://statefarm.com",
+    //     logoSrc: "https://logos-world.net/wp-content/uploads/2021/10/State-Farm-Symbol.png",
+    //     area: "Software Engineer Intern",
+    //     year: "2024",
+    // },
     {
         company: "FIU: Applied Research Center",
         href: "https://arc.fiu.edu/research/information-technology/applied-artificial-intelligence/",
         logoSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Florida_Internation_University_seal.svg/250px-Florida_Internation_University_seal.svg.png",
-        area: "Applied Research Intern",
-        year: "2024",
+        area: "Applied Research",
+        year: "2023-24",
     },
     {
-        company: "MDC School of Science",
+        company: "MDC: School of Science",
         href: "https://www.nsf.gov",
         logoSrc: "https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-1/210304790_456144652401774_8110878663974250044_n.jpg?stp=c0.0.809.809a_dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=bqAA_BeX4cAQ7kNvwE0Yat2&_nc_oc=AdnWD5bEQ803KOIhsswLG-KLRIV3xZJsk3ng0C3TqzvZVydRG45v233fawbF9VH4YPWqd_t8OP7OW4LV08SGSONL&_nc_zt=24&_nc_ht=scontent-sea1-1.xx&_nc_gid=MRMXRa3CczmGvqNPMTLJeA&oh=00_AficpHhwTTx-ilLGUWswrRgkezCyl0jerSMyPHkHcWzOWw&oe=692F863D",
-        area: "Undergraduate Research Intern",
-        year: "2024"
+        area: "Research",
+        year: "2023"
     },
     {
         company: "MDC: School of Eng. and Technology",
         href: "https://www.mdc.edu/entec/",
         logoSrc: "https://aefschools.com/wp-content/uploads/2025/02/Seal-of-Miami-Dade-College.svg.png",
         area: "Tutor",
-        year: "2022-2023"
+        year: "2022-23"
     }
 ];
