@@ -20,9 +20,9 @@ export default function Header() {
 
             {/* Right Section: Links */}
             <div className="flex flex-row items-center space-x-4">
-                {/* <Link href="/writing">
-          <span className="cursor-pointer">Writing</span>
-        </Link> */}
+                <Link href="/writings" className="text-foreground/80 hover:text-foreground">
+                  Writings
+                </Link>
 
                 {/* Social Icons */}
                 <div className="flex flex-row items-center space-x-3">

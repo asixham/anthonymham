@@ -1,7 +1,6 @@
 import { Footer } from "@/components/footer";
-import WorkSection, { internships, work } from "@/components/work-experience";
+import WorkSection, { education, internships, work } from "@/components/work-experience";
 import Header from "@/components/header";
-import AcademicSection, { defaultAcademics } from "@/components/academic-experience";
 import ProjectsSection, { defaultProjects } from "@/components/projects";
 import { BlurFade } from "@/components/ui/blur-fade";
 import Link from "next/link";
@@ -12,6 +11,9 @@ export default function Home() {
   const sectionBaseDelay = 0.1;      // first element delay
   const sectionStep = 0.05;           // stagger between siblings
   const introStep = 0.02;             // tighter stagger for intro lines
+
+  /** Toggle to show the biography paragraphs under the header. Delays still use `intro.length` so section timing stays the same when this is false. */
+  const showIntro = false;
 
   const intro = [
     "I'm a fourth-year Computer Science student at Florida International University, passionate about building solutions to complex problems.",
@@ -34,50 +36,53 @@ export default function Home() {
               <Header />
             </BlurFade>
 
-            {/* Intro copy (each paragraph staggered) */}
-            <div className="px-3 space-y-3 text-gray-700 text-lg w-full">
-              {intro.map((line, i) => (
-                <BlurFade key={i} delay={sectionBaseDelay + sectionStep + i * introStep}>
-                  <p>{line}</p>
-                </BlurFade>
-              ))}
+            {/* Intro copy (optional) + reach-out — shared `space-y-3` so spacing matches when intro is on. */}
+            <div className="px-3 space-y-3 text-muted-foreground text-lg w-full">
+              {showIntro
+                ? intro.map((line, i) => (
+                    <BlurFade key={i} delay={sectionBaseDelay + sectionStep + i * introStep}>
+                      <p>{line}</p>
+                    </BlurFade>
+                  ))
+                : null}
               <BlurFade delay={sectionBaseDelay + sectionStep + intro.length * introStep}>
                 <p>
-                  I&apos;m always interested in meeting new people and learning new things. Feel free to
-                  {" "}
-                  <Link className="border-b border-dashed border-[#bbb] " href="mailto:anthony@anthonymham.com">email me</Link>
-                  {" "}
-                  or connect with me on
-                  {" "}
-                  <Link className="border-b border-dashed border-[#bbb]" href="https://linkedin.com/in/xnthiny">LinkedIn</Link>.
+                  Reach out at{" "}
+                  <Link
+                    className="border-b border-dashed border-border hover:text-foreground"
+                    href="mailto:mail@anthonymham.com"
+                  >
+                    mail@anthonymham.com
+                  </Link>
+                  .
                 </p>
               </BlurFade>
             </div>
 
             {/* Full Time */}
-            {/* <BlurFade className="w-full px-3" delay={sectionBaseDelay + 2 * sectionStep + intro.length * introStep}>
-          <WorkSection title="Work" jobs={work} />
-        </BlurFade> */}
+            <BlurFade className="w-full px-3" delay={sectionBaseDelay + 2 * sectionStep + intro.length * introStep}>
+              <WorkSection title="Work" jobs={work} />
+            </BlurFade>
 
             {/* Internships */}
             <BlurFade className="w-full px-3" delay={sectionBaseDelay + 2 * sectionStep + intro.length * introStep}>
               <WorkSection title="Undergraduate Internships" jobs={internships} />
             </BlurFade>
 
-            {/* Projects */}
-            <BlurFade className="px-3 w-full" delay={sectionBaseDelay + 3 * sectionStep + intro.length * introStep}>
-              <ProjectsSection projects={defaultProjects} />
+            {/* Education */}
+            <BlurFade className="w-full px-3" delay={sectionBaseDelay + 3 * sectionStep + intro.length * introStep}>
+              <WorkSection title="Education" jobs={education} />
             </BlurFade>
 
-            {/* Academics */}
-            {/* <BlurFade className="w-full px-3" delay={sectionBaseDelay + 4 * sectionStep + intro.length * introStep}>
-          <AcademicSection title="Education" academics={defaultAcademics} />
-        </BlurFade> */}
+            {/* Projects */}
+            <BlurFade className="px-3 w-full" delay={sectionBaseDelay + 4 * sectionStep + intro.length * introStep}>
+              <ProjectsSection projects={defaultProjects} />
+            </BlurFade>
           </div>
 
           {/* Footer */}
           <Link className="w-full" href="mailto:mail@anthonymham.com">
-            <BlurFade className="w-full" delay={sectionBaseDelay + 5 * sectionStep + intro.length * introStep}>
+            <BlurFade className="w-full" delay={sectionBaseDelay + 6 * sectionStep + intro.length * introStep}>
               <Footer />
             </BlurFade>
           </Link>

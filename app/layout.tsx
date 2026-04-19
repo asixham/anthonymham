@@ -18,7 +18,7 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html:
-              `(function(){try{var forced=${FORCE_LIGHT_MODE ? "true" : "false"};if(forced){document.documentElement.classList.remove('dark');document.documentElement.setAttribute('data-force-light','1');try{localStorage.setItem('theme','light');}catch(e){}}else{document.documentElement.setAttribute('data-force-light','0');var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}}catch(e){}})();`,
+              `(function(){try{var forced=${FORCE_LIGHT_MODE ? "true" : "false"};if(forced){document.documentElement.classList.remove('dark');document.documentElement.setAttribute('data-force-light','1');try{localStorage.setItem('theme','light');}catch(e){}}else{document.documentElement.setAttribute('data-force-light','0');var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark');try{localStorage.setItem('theme','light');}catch(e){}}else{document.documentElement.classList.add('dark');try{localStorage.setItem('theme','dark');}catch(e){}}}}catch(e){}})();`,
           }}
         />
         {children}

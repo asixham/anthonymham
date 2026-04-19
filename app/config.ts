@@ -1,1 +1,1 @@
-export const FORCE_LIGHT_MODE = true;
+export const FORCE_LIGHT_MODE = false;

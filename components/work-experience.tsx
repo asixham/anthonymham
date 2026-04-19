@@ -63,23 +63,23 @@ function WorkRow({ job, delaySec }: { job: Job; delaySec: number }) {
     rel="noreferrer"
     className="flex w-full items-center min-w-0 overflow-hidden"
   >
-    {/* Logo */}
-    <img
-      alt={job.logoAlt || job.company}
-      width={24}
-      height={24}
-      loading="lazy"
-      decoding="async"
-      className="h-6 w-6 rounded-sm shrink-0"
-      style={{ color: "transparent" }}
-      src={job.logoSrc}
-    />
+    {/* Logo — fixed slot so layout is stable; image scales inside without stretching */}
+    <span className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-sm">
+      <img
+        alt={job.logoAlt || job.company}
+        loading="lazy"
+        decoding="async"
+        className="max-h-6 max-w-6 h-auto w-auto object-contain"
+        style={{ color: "transparent" }}
+        src={job.logoSrc}
+      />
+    </span>
 
     {/* Left text cluster: Company · Role (stays together) */}
     <div className="flex items-center gap-1.5 w-0 flex-1 min-w-0 overflow-hidden ml-3">
       {/* Company + optional suffix */}
       <div className="flex items-center gap-1.5 min-w-0">
-        <span className="truncate text-gray-700 text-md">{job.company}</span>
+        <span className="truncate text-foreground text-md">{job.company}</span>
         {job.companySuffix ? (
           <span className="text-md text-muted-foreground shrink-0">{job.companySuffix}</span>
         ) : null}
@@ -106,19 +106,31 @@ export const work: Job[] = [
     {
         company: "Google",
         href: "https://google.com",
-        logoSrc: "https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_200_200/B4EZmhegXHGcAM-/0/1759350753990/google_logo?e=1763596800&v=beta&t=Fdsr4Iq3N7IudCCzZQgOQrwOHSPx3TXROdsKFFqNd-E",
+        logoSrc: "https://images.seeklogo.com/logo-png/27/1/google-logo-png_seeklogo-273191.png",
         area: "Software Engineer",
-        year: "2025",
-    },
-    {
-        company: "Bloomberg",
-        href: "https://bloomberg.com",
-        logoSrc: "https://media.licdn.com/dms/image/v2/C4D0BAQF0uyE7RGKDGg/company-logo_200_200/company-logo_200_200/0/1631374698859/bloomberg_lp_logo?e=1763596800&v=beta&t=ywumzUWXZlBZwsnRV_U-UiCDNbzjkRTBIph99XigJjE",
-        area: "Software Engineer",
-        year: "2026",
+        year: "Incoming 2026",
     },
 ]
 
+
+export const education: Job[] = [
+    {
+        company: "Florida International University",
+        href: "https://www.fiu.edu",
+        logoSrc:
+            "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Florida_Internation_University_seal.svg/250px-Florida_Internation_University_seal.svg.png",
+        area: "B.S. Computer Science",
+        year: "2026",
+    },
+    {
+        company: "Georgia Institute of Technology",
+        href: "https://www.gatech.edu",
+        logoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Georgia_Tech_Yellow_Jackets_logo.svg/250px-Georgia_Tech_Yellow_Jackets_logo.svg.png",
+        area: "M.S. Computer Science",
+        year: "2028",
+    },
+];
 
 export const internships: Job[] = [
     {
@@ -131,17 +143,17 @@ export const internships: Job[] = [
     {
         company: "Google",
         href: "https://google.com",
-        logoSrc: "https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_200_200/B4EZmhegXHGcAM-/0/1759350753990/google_logo?e=1763596800&v=beta&t=Fdsr4Iq3N7IudCCzZQgOQrwOHSPx3TXROdsKFFqNd-E",
+        logoSrc: "https://images.seeklogo.com/logo-png/27/1/google-logo-png_seeklogo-273191.png",
         area: "Engineering",
         year: "2025",
     },
-    // {
-    //     company: "State Farm",
-    //     href: "https://statefarm.com",
-    //     logoSrc: "https://logos-world.net/wp-content/uploads/2021/10/State-Farm-Symbol.png",
-    //     area: "Software Engineer Intern",
-    //     year: "2024",
-    // },
+    {
+        company: "State Farm",
+        href: "https://statefarm.com",
+        logoSrc: "https://logos-world.net/wp-content/uploads/2021/10/State-Farm-Symbol.png",
+        area: "Software Engineer Intern",
+        year: "2024",
+    },
     {
         company: "FIU: Applied Research Center",
         href: "https://arc.fiu.edu/research/information-technology/applied-artificial-intelligence/",
@@ -152,7 +164,8 @@ export const internships: Job[] = [
     {
         company: "MDC: School of Science",
         href: "https://www.nsf.gov",
-        logoSrc: "https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-1/210304790_456144652401774_8110878663974250044_n.jpg?stp=c0.0.809.809a_dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=bqAA_BeX4cAQ7kNvwE0Yat2&_nc_oc=AdnWD5bEQ803KOIhsswLG-KLRIV3xZJsk3ng0C3TqzvZVydRG45v233fawbF9VH4YPWqd_t8OP7OW4LV08SGSONL&_nc_zt=24&_nc_ht=scontent-sea1-1.xx&_nc_gid=MRMXRa3CczmGvqNPMTLJeA&oh=00_AficpHhwTTx-ilLGUWswrRgkezCyl0jerSMyPHkHcWzOWw&oe=692F863D",
+        logoSrc:
+            "https://scontent-mia3-1.xx.fbcdn.net/v/t1.6435-9/210304790_456144652401774_8110878663974250044_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=0GFEQ8J3g9QQ7kNvwEomqGU&_nc_oc=AdoQjwKI-fftrd6bVKrACZTQcL70Gbqg7mDp7QmVN6X0dmXdBnlvtvUEoN2MR7QUG_k&_nc_zt=23&_nc_ht=scontent-mia3-1.xx&_nc_gid=x4H9RxVFediB46727ebk-g&_nc_ss=7a3a8&oh=00_Af0cWk6v8ANmTF6zU54jkWcqxZ3I4T4faDaZHGVlY17HPQ&oe=6A0CBAF7",
         area: "Research",
         year: "2023"
     },
